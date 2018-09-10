@@ -33372,7 +33372,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   data: function data() {
     return {
       messages: [],
-      newMessage: ''
+      newMessage: '',
+      contactId: 2
     };
   },
   mounted: function mounted() {
@@ -33384,7 +33385,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     getMessages: function getMessages() {
       var _this = this;
 
-      axios.get('api/messages').then(function (response) {
+      axios.get('api/messages?contact_id=' + this.contactId).then(function (response) {
         //console.log(response.data);
         _this.messages = response.data;
       });
